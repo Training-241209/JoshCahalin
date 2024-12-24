@@ -35,6 +35,12 @@ public class Reimbursement {
         this.user = user;
     }
 
+    public Reimbursement(String description, Double amount, User user) {
+        this.description = description;
+        this.amount = amount;
+        this.user = user;
+    }
+
     /**
      * Constructor with all fields.
      */

@@ -1,5 +1,6 @@
 package project1.p1Back.service;
 
+import project1.p1Back.entity.User;
 import project1.p1Back.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +17,10 @@ public class UserService implements UserDetailsService{
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public User findUserById(int userId){
+        return userRepository.findById(userId).orElse(null);
     }
 
     @Override
